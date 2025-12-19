@@ -105,9 +105,9 @@ body {
       transform: translateY(0);
     }
   }
-/* Serie-side: kridhvid */
-body.series-page {
-  background: #ffffff;
-  color: #000000;
-}
+    /* Serie-side: kridhvid */
+    body.series-page {
+      background: #ffffff;
+      color: #000000;
+    }
   
