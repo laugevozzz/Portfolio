@@ -105,6 +105,7 @@ body {
       transform: translateY(0);
     }
   }
+
    /* ---------- Serie-side: kridhvid ---------- */
 
 body.series-page {
@@ -117,3 +118,6 @@ body.series-page .background-texture,
 body.series-page .signature {
   display: none;
 }
+
+body.series-page {
+  background: red !important;
