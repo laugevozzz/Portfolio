@@ -111,3 +111,9 @@ body.series-page {
   background: #ffffff !important;
   color: #000000 !important;
 }
+
+/* Skjul baggrundslag på serie-sider */
+body.series-page .background-texture,
+body.series-page .signature {
+  display: none;
+}
