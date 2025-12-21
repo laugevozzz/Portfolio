@@ -121,9 +121,11 @@ body.series-page .signature {
 
 @media (min-width: 900px) {
   .series img {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 6rem;
+    max-width: 70%;
+    margin: 0 auto 6rem;
+  }
+
+  .series img:nth-child(4n + 2) {
+    margin-bottom: 10rem;
   }
 }
