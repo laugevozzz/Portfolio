@@ -119,13 +119,16 @@ body.series-page .signature {
   display: none;
 }
 
+/* Desktop-only justeringer */
 @media (min-width: 900px) {
   .series img {
     max-width: 70%;
-    margin: 0 auto 6rem;
-  }
+    max-height: 80vh;
+    width: auto;
+    height: auto;
 
-  .series img:nth-child(4n + 2) {
-    margin-bottom: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6rem;
   }
 }
