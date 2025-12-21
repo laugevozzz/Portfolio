@@ -119,3 +119,11 @@ body.series-page .signature {
   display: none;
 }
 
+@media (min-width: 900px) {
+  .series img {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6rem;
+  }
+}
