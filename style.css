@@ -1,176 +1,136 @@
-/* Grund */
+/* ===============================
+   GRUND
+================================ */
 
-body {
-    margin: 0;
-    padding: 4rem;
-    font-family: Times New Roman, serif;
-    background: #f6f2e8;
-    color: #1a1a1a;
-    animation: pageFade 1.4s ease forwards;
-  }
-  
-  @keyframes pageFade {
-    from {
-      opacity: 0;
-      transform: translateY(4px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Forside */
-  
-  .container {
-    position: relative;
-    max-width: 700px;
-    z-index: 2;
-  }
-  
-  .series-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .series-list li {
-    margin-bottom: 0.8rem;
-  }
-  
-  .series-list a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .series-list a:hover {
-    text-decoration: underline;
-  }
-  
-  .signature {
-    position: fixed;
-    top: 100%;
-    left: 60%;
-    width: 120vw;
-    transform: translate(-50%, -50%);
-    opacity: 0.3;
-    z-index: 1;
-    pointer-events: none;
-    mix-blend-mode: normal;
-    filter: none;
-  }
-  
-  .background-texture {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 120vw;
-    transform: translate(-50%, -50%);
-    opacity: 0.2;
-    z-index: 0;
-    pointer-events: none;
-    mix-blend-mode: normal;
-    filter: blur(0.4px);
-  }
-
-  /* Serie-sider */
-  
-  nav {
-    margin-bottom: 2rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 0.9rem;
-  }
-  
-  .series img {
-    display: block;
-    max-width: 100%;
-    margin-bottom: 4rem;
-    opacity: 0;
-    animation: imageFade 1.4s ease forwards;
-  }
-  
-  @keyframes imageFade {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-   /* ---------- Serie-side: kridhvid ---------- */
-
-body.series-page {
-  background: #ffffff !important;
-  color: #000000 !important;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+  font-family: "Times New Roman", serif;
+  color: #1a1a1a;
 }
 
-/* Skjul baggrundslag på serie-sider */
-body.series-page .background-texture,
-body.series-page .signature {
+/* ===============================
+   BIOSPHERE ATMOSPHERE
+================================ */
+
+#biosphere-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: black;
+}
+
+#biosphere-atmosphere iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+
+  opacity: 0.65;
+
+  filter:
+    blur(0.6px)
+    saturate(1.05)
+    brightness(1.02)
+    contrast(0.97);
+
+  transform: scale(1.02);
+}
+
+/* ===============================
+   CONTENT LAG
+================================ */
+
+.site-title,
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 4rem;
+}
+
+/* Titel */
+
+.site-title {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+}
+
+/* ===============================
+   SERIE-LISTE
+================================ */
+
+.series-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.series-list li {
+  margin-bottom: 0.8rem;
+}
+
+.series-list a {
+  text-decoration: none;
+  color: inherit;
+  text-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+.series-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   SERIE-SIDER
+================================ */
+
+body.series-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.series-page #biosphere-atmosphere {
   display: none;
 }
 
-/* Desktop-only justeringer */
+nav {
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+.series img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 6rem auto;
+  opacity: 0;
+  animation: imageFade 1.4s ease forwards;
+}
+
+@keyframes imageFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desktop justering */
+
 @media (min-width: 900px) {
   .series img {
     max-width: 70%;
     max-height: 80vh;
-    width: auto;
-    height: auto;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 6rem;
   }
 }
-/* --- BIOSPHERE ATMOSPHERE --- */
-#biosphere-atmosphere {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
 
-#biosphere-atmosphere iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-
-  /* dæmpning */
-  opacity: 0.55;
-
-  /* blød farvejustering */
-  filter:
-    blur(1.2px)
-    saturate(0.9)
-    brightness(0.95)
-    contrast(0.95);
-
-  /* subtil bevægelse i perception */
-  transform: scale(1.03);
-}
-
-body {
-  background: transparent;
-}
-
-.container,
-.site-title {
-  position: relative;
-  z-index: 1;
-}
-
-.site-title,
-.series-list a {
-  text-shadow: 0 0 12px rgba(0,0,0,0.35);
-}
