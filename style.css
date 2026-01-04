@@ -1,6 +1,7 @@
 /* =========================
    GRUND
    ========================= */
+
 html, body {
   height: 100%;
 }
@@ -49,7 +50,6 @@ body {
   height: 100%;
   border: none;
 
-  /* afbalanceret klarhed */
   opacity: 0.65;
 
   filter:
@@ -72,13 +72,12 @@ body {
   z-index: 2;
 }
 
-.series-page .container {
-  min-height: 120vh;
-}
-
-site-title {
+.site-title {
   position: relative;
   z-index: 2;
+
+  font-weight: 500;
+  letter-spacing: 0.02em;
 
   color: rgba(255,255,255,0.96);
   text-shadow:
@@ -86,8 +85,9 @@ site-title {
     0 0 18px rgba(0,0,0,0.35);
 }
 
+
 /* =========================
-   SERIE-LISTE
+   SERIE-LISTE (FORSIDE)
    ========================= */
 
 .series-list {
@@ -125,6 +125,8 @@ site-title {
   bottom: 1.2rem;
   right: 1.6rem;
 
+  max-width: 240px;
+
   font-size: 0.7rem;
   line-height: 1.35;
 
@@ -134,6 +136,7 @@ site-title {
   pointer-events: none;
 }
 
+
 /* =========================
    SERIE-SIDER (KRIDHVID)
    ========================= */
@@ -141,20 +144,52 @@ site-title {
 body.series-page {
   background: #ffffff !important;
   color: #000000 !important;
+
+  overflow-y: auto;
 }
 
-body.series-page .biosphere-note,
-body.series-page #biosphere-atmosphere {
+body.series-page #biosphere-atmosphere,
+body.series-page .biosphere-note {
   display: none;
 }
 
+.series-page .container {
+  max-width: none;
+  padding-top: 2rem;
+}
+
+
 /* =========================
-   RESPONSIVE
+   SERIE-BILLEDER – BASIS
    ========================= */
 
-@media (max-width: 700px) {
+.series {
+  width: 100%;
+}
+
+.series img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================
+   MOBIL – 1 AD GANGEN
+   ========================= */
+
+@media (max-width: 899px) {
   body {
     padding: 2rem;
+  }
+
+  .series {
+    display: block;
+  }
+
+  .series img {
+    margin: 0 auto 3rem auto;
+    max-width: 100%;
   }
 
   .biosphere-note {
@@ -163,6 +198,31 @@ body.series-page #biosphere-atmosphere {
   }
 }
 
-body.series-page {
-  overflow-y: auto;
+
+/* =========================
+   DESKTOP – 2 OG 2
+   ========================= */
+
+@media (min-width: 900px) {
+  .series {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6rem 4rem;
+
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .series img {
+    max-width: 100%;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+  }
+
+  /* let, næsten usynlig forskydning pr. par */
+  .series img:nth-child(4n + 1),
+  .series img:nth-child(4n + 2) {
+    transform: translateY(1.2rem);
+  }
 }
