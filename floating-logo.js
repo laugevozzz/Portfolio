@@ -3,8 +3,8 @@ const logo = document.getElementById("floating-logo");
 let x = Math.random() * (window.innerWidth - logo.offsetWidth);
 let y = Math.random() * (window.innerHeight - logo.offsetHeight);
 
-let vx = 0.6 + Math.random() * 0.6;
-let vy = 0.6 + Math.random() * 0.6;
+let vx = 0.3 + Math.random() * 0.6;
+let vy = 0.3 + Math.random() * 0.6;
 
 function animate() {
   x += vx;
